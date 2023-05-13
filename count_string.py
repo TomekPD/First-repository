@@ -12,10 +12,13 @@ def count_char(text):
             char_counts[char] = 0
 
         char_counts[char] += 1
+    max_count = max(char_counts.values())
 
-    return char_counts
+    max_chars = {char: count for char, count in char_counts.items() if count == max_count}
+
+    return max_chars
 
 
 text = "hello world and uniwersum"
-char_counts = count_char(text)
-print(char_counts)
+max_char = count_char(text)
+print(max_char)
